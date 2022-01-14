@@ -1,0 +1,16 @@
+version: 0.0
+os: windows
+
+files:
+  - source: /*.war
+    destination: c:\_tools\tomcat\webapps
+    
+hooks:
+  AfterInstall:
+    - location: server_start.bat
+      timeout: 300
+      runas: administrator
+  ApplicationStop:
+    - location: server_stop.bat
+      timeout: 300
+      runas: administrato
